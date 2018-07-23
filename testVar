@@ -1,0 +1,45 @@
+// Exported from:        http://Mateas-MBP:5516/#/templates/Folderb23c603fd7ce42a2915a4c41c44af2f6-Folderc0ee6bac1f764ca2991db335b03f0b4d-Release973fa2eed08c4382acad92040b329640/releasefile
+// XL Release version:   8.1.0-SNAPSHOT
+// Date created:         Mon Jul 23 12:17:41 CEST 2018
+
+xlr {
+  template('templateWithVariables') {
+    folder('test/variable')
+    variables {
+      listBoxVariable('listFromSampleScriptValueProvider') {
+        required false
+        label 'List From Sample Script Value Provider'
+        // no DSL renderer found for test.TestValueProvider
+      }
+      listBoxVariable('v1') {
+        // no DSL renderer found for test.TestValueProvider
+      }
+      listBoxVariable('v2') {
+        possibleValues 
+      }
+      listBoxVariable('fixed_list') {
+        possibleValues 'a', 'b', 'c', 'd'
+      }
+      listVariable('list1') {
+        value 'List1', 'List2'
+      }
+    }
+    scheduledStartDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2018-07-19T09:00:00+0200')
+    phases {
+      phase('New Phase') {
+        tasks {
+          userInput('Use variable task') {
+            description 'Please enter the required information below.'
+            variables {
+              variable 'v1'
+            }
+          }
+          gate('Wait') {
+            
+          }
+        }
+      }
+    }
+    
+  }
+}
