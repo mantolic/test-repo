@@ -1,6 +1,6 @@
 // Exported from:        http://Mateas-MBP:5516/#/templates/Folderb23c603fd7ce42a2915a4c41c44af2f6-Folderc0ee6bac1f764ca2991db335b03f0b4d-Release973fa2eed08c4382acad92040b329640/releasefile
 // XL Release version:   8.1.0-SNAPSHOT
-// Date created:         Mon Jul 23 12:17:41 CEST 2018
+// Date created:         Mon Jul 23 12:20:18 CEST 2018
 
 xlr {
   template('templateWithVariables') {
