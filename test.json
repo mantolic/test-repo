@@ -1,5 +1,5 @@
 {
-  "myTest": "test value",
+  "title": "test value",
   "message": "message",
   "status": "in_progress"
 }
