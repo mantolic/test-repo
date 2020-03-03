@@ -1,3 +1,4 @@
 {
-  "myTest": "test value"
+  "myTest": "test value",
+  "message": "message"
 }
