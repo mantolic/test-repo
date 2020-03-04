@@ -1,6 +1,5 @@
 {
   "title": "test value",
   "message": "message",
-  "status": "in_progress",
-  "update": "yes"
+  "status": "in_progress"
 }
