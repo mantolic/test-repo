@@ -1,14 +1,15 @@
-# Exported from:        http://mateas-mac:5516/
+# Exported from:        http://MacBook-Pro.local:5516/
 # Release version:      10.0.0-20210203-123974
-# Date created:         Wed Apr 07 10:23:22 CEST 2021
+# Date created:         Wed Jun 02 11:31:04 CEST 2021
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: test ENG-4724
+  home: sdlm
 spec:
-- folderVariables:
-  - type: xlrelease.StringVariable
-    key: folder.mySampleVar
-    value: sample
+- template: templ1
+  scheduledStartDate: 2021-06-02T09:00:00+02:00
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
