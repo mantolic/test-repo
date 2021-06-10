@@ -1,6 +1,6 @@
 # Exported from:        http://MacBook-Pro.local:5516/
 # Release version:      10.0.0-20210203-123974
-# Date created:         Wed Jun 02 11:32:02 CEST 2021
+# Date created:         Thu Jun 10 13:36:20 CEST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,8 +8,25 @@ kind: Templates
 metadata:
   home: sdlm
 spec:
+- folderVariables:
+  - type: xlrelease.StringVariable
+    key: folder.mySampleVar
+    value: sample
+- template: h
+  scheduledStartDate: 2021-06-07T09:00:00+02:00
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: t
+      type: xlrelease.CreateReleaseTask
+  riskProfile: Default risk profile
 - template: templ1
   scheduledStartDate: 2021-06-02T09:00:00+02:00
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: test
+  scheduledStartDate: 2021-06-08T09:00:00+02:00
   phases:
   - phase: New Phase
   riskProfile: Default risk profile
