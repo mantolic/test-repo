@@ -1,0 +1,15 @@
+# Exported from:        http://MacBook-Pro.local:5516/
+# Release version:      10.0.0-20210203-123974
+# Date created:         Thu Jun 17 17:15:13 CEST 2021
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: My folder
+spec:
+- template: d
+  scheduledStartDate: 2021-06-17T09:00:00+02:00
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
