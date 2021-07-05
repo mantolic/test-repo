@@ -1,38 +1,33 @@
-// Exported from:        http://MacBook-Pro.local:5516/#/templates/Folder2d284cfb0338409e9fcae77d34380a2d-Release205d1938837246a8815dd4bd5e967d5d/code
+// Exported from:        http://MacBook-Pro.local:5517/101/#/templates/Folder09aeb33894cb44e792aabb53bc851df2-Release65b44ede21dc461aa19060cf65e9de87/code
 // Release version:      10.1.2
-// Date created:         Mon Jul 05 11:59:13 CEST 2021
+// Date created:         Mon Jul 05 15:32:24 CEST 2021
 
 xlr {
   template('template with trigger') {
     folder('test trigger')
-    variables {
-      stringVariable('commit') {
-        
-      }
-    }
     scheduledStartDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2021-07-05T09:00:00+0200')
     phases {
       phase('New Phase') {
         tasks {
-          manual('first task') {
+          manual('manual') {
             comments {
               comment {
-                text 'first comment'
+                text 'my commment'
                 author 'admin'
-                date Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2021-07-05T11:56:26+0200')
-                creationDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2021-07-05T11:56:26+0200')
+                date Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2021-07-05T15:30:01+0200')
+                creationDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2021-07-05T15:30:01+0200')
+              }
+              comment {
+                text 'my commment'
+                author 'admin'
+                date Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2021-07-05T15:30:01+0200')
+                creationDate Date.parse("yyyy-MM-dd'T'HH:mm:ssZ", '2021-07-05T15:30:01+0200')
               }
             }
             attachments {
-              attachment("sql:Attachment4784580e3d744633b0d2c32b0853bcab") {
-                filename "attachments/Attachment4784580e3d744633b0d2c32b0853bcab-🌈 Icon color.svg"
+              attachment("sql:Attachment7b9767294d3548a08037d86a3240358e") {
+                filename "attachments/Attachment7b9767294d3548a08037d86a3240358e-🌈 Icon color.svg"
               }
-            }
-          }
-          userInput('second task') {
-            description 'Please enter the required information below.'
-            variables {
-              variable 'commit'
             }
           }
         }
