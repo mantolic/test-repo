@@ -1,4 +1,3 @@
 # test-repo
 
-Test description...
-
+Test description
