@@ -1,6 +1,6 @@
 // Exported from:        http://MacBook-Pro.local:5516/#/templates/Folder7851c9eabebe4b9ca75f372ea782e859-Releaseb9c95555630d4008a326e0b397150d98/code
 // Release version:      10.2.0-SNAPSHOT
-// Date created:         Mon Jul 05 13:51:59 CEST 2021
+// Date created:         Mon Jul 05 14:16:36 CEST 2021
 
 xlr {
   template('template with trigger (1)') {
