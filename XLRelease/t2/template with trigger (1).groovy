@@ -1,6 +1,6 @@
 // Exported from:        http://MacBook-Pro.local:5516/#/templates/Folder7851c9eabebe4b9ca75f372ea782e859-Releaseb9c95555630d4008a326e0b397150d98/code
 // Release version:      10.2.0-SNAPSHOT
-// Date created:         Mon Jul 05 14:16:36 CEST 2021
+// Date created:         Mon Jul 05 14:27:25 CEST 2021
 
 xlr {
   template('template with trigger (1)') {
@@ -36,6 +36,11 @@ xlr {
             }
           }
           custom('t3') {
+            attachments {
+              attachment("sql:Attachment662ef079d8454350958aab98d60b44cb") {
+                filename "attachments/Attachment662ef079d8454350958aab98d60b44cb-tmpl_temp.yaml"
+              }
+            }
             script {
               type 'remoteScript.Unix'
               

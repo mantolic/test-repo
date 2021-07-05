@@ -1,0 +1,24 @@
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: test trigger
+spec:
+- template: template with trigger
+  scheduledStartDate: 2021-07-05T09:00:00+02:00
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: first task
+      type: xlrelease.Task
+    - name: second task
+      type: xlrelease.UserInputTask
+      description: Please enter the required information below.
+      variables:
+      - commit
+    - name: t3
+      type: remoteScript.Unix
+  variables:
+  - type: xlrelease.StringVariable
+    key: commit
+  riskProfile: Default risk profile
