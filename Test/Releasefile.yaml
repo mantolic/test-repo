@@ -1,0 +1,81 @@
+# Exported from:        http://MacBook-Pro.local:5516/
+# Release version:      10.2.0-20210603-123974
+# Date created:         Tue Jul 06 11:04:27 CEST 2021
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: test
+spec:
+- pattern: d
+  stages:
+  - stage: stage one
+    status: CLOSED
+    transition:
+      name: Transition one
+      type: delivery.Transition
+      conditions:
+      - type: delivery.ConditionGroup
+        operator: AND
+        conditions:
+        - type: delivery.ConditionGroup
+          operator: OR
+          conditions:
+          - type: delivery.ItemsCompletionCondition
+          - type: delivery.TimeCondition
+            startDateOffset: 1
+          - type: delivery.ItemsCompletionCondition
+        - type: delivery.ConditionGroup
+          operator: OR
+          conditions:
+          - type: delivery.TimeCondition
+            startDateOffset: 1
+  - stage: Stage two
+    status: CLOSED
+    transition:
+      name: Transition 2
+      type: delivery.Transition
+      conditions:
+      - type: delivery.ConditionGroup
+        operator: AND
+        conditions:
+        - type: delivery.ConditionGroup
+          operator: OR
+          conditions:
+          - type: delivery.ItemsCompletionCondition
+          - type: delivery.TimeCondition
+            startDateOffset: 1
+  - stage: Stage 3
+  - stage: Stage 4
+  trackedItems:
+  - trackedItem: item
+  - trackedItem: item 1
+  - trackedItem: item 2
+  - trackedItem: item 3
+  - trackedItem: item 4
+  - trackedItem: item 5
+- pattern: simple
+  stages:
+  - stage: New Stage
+    transition:
+      name: New Transition
+      type: delivery.Transition
+      conditions:
+      - type: delivery.ConditionGroup
+        operator: OR
+        conditions:
+        - type: delivery.ConditionGroup
+          operator: AND
+          conditions:
+          - type: delivery.ItemsCompletionCondition
+        - type: delivery.ConditionGroup
+          operator: AND
+          conditions:
+          - type: delivery.TimeCondition
+            startDateOffset: 29
+  - stage: New Stage (1)
+    transition:
+      name: New Transition
+      type: delivery.Transition
+  - stage: New Stage (2)
