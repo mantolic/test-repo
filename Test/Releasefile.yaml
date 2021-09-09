@@ -1,6 +1,6 @@
 # Exported from:        http://MacBook-Pro.local:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Sep 09 09:06:11 CEST 2021
+# Date created:         Thu Sep 09 09:07:34 CEST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,11 @@ kind: Templates
 metadata:
   home: as-code
 spec:
+- name: test as-code git repo
+  type: git.Repository
+  url: https://github.com/mantolic/test-repo
+  username: mantolic
+  password: !value "git_Repository_test_as_code_git_repo_password"
 - pattern: pattern
   stages:
   - stage: New Stage (1)
@@ -24,6 +29,14 @@ spec:
           - type: delivery.ItemsCompletionCondition
   - stage: New Stage (2)
   - stage: New Stage
+- template: new templ
+  scheduledStartDate: 2021-09-09T09:00:00+02:00
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: m
+      type: xlrelease.Task
+  riskProfile: Default risk profile
 - template: test
   scheduledStartDate: 2021-09-08T09:00:00+02:00
   phases:
