@@ -1,6 +1,6 @@
 # Exported from:        http://MacBook-Pro.local:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Thu Sep 09 09:07:34 CEST 2021
+# Date created:         Thu Sep 09 09:54:16 CEST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -26,6 +26,7 @@ spec:
   - stage: New Stage
 - template: new templ
   scheduledStartDate: 2021-09-09T09:00:00+02:00
+  dueDate: 2021-09-09T10:00:00+02:00
   phases:
   - phase: New Phase
     tasks:
@@ -34,6 +35,7 @@ spec:
   riskProfile: Default risk profile
 - template: test
   scheduledStartDate: 2021-09-08T09:00:00+02:00
+  dueDate: 2021-09-08T10:00:00+02:00
   phases:
   - phase: New Phase
     tasks:
@@ -59,7 +61,6 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       The **${task.title}** task in the **${release.title}** release is overdue.
-
       After the task is completed, please mark it as Completed in Release.
     roles:
     - Watcher
@@ -70,7 +71,6 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
-
       **${release.flagComment}**
     roles:
     - Watcher
@@ -81,14 +81,12 @@ spec:
     subject: "[Release] Audit report was aborted"
     body: |-
       **Your audit report was aborted!**
-
        Please try to generate it again or contact your Release administrator for assistance.
   - notification: MANUAL_TASK_STARTED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       The **${task.title}** task in the **${release.title}** release has started and is assigned to you or your team.
-
       After the task is completed, please mark it as Completed in Release.
     roles:
     - Watcher
@@ -98,9 +96,7 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       The **${task.title}** task in the **${release.title}** release has failed.
-
       Other tasks could still be in progress, but the release will stop after they complete.
-
       You can retry the task, reassign it to somebody else or abort the release.
     roles:
     - Watcher
@@ -117,7 +113,6 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       **${comment.authorFullName}** commented on the **${task.title}** task in the **${release.title}** release:
-
       ${comment.text}
     roles:
     - Watcher
@@ -128,16 +123,13 @@ spec:
     subject: "[Release] Audit report has failed"
     body: |-
       **Your audit report has failed!**
-
        Please try to generate it again or contact your Release administrator for assistance.
   - notification: RELEASE_FAILED
     priority: High
     subject: "[Release] ${release.title}"
     body: |-
       The **${release.title}** release has failed due to a task failure.
-
       The release is now stopped.
-
       You can retry the failed task, reassign it to somebody else or abort the release.
     roles:
     - Release Admin
@@ -146,7 +138,6 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       The **${task.title}** task in the **${release.title}** release is due in **${task.dueInHours}** hours and **${task.dueInMinutes}** minutes.
-
       After the task is completed, please mark it as Completed in Release.
     roles:
     - Watcher
@@ -157,7 +148,6 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       The **${task.title}** task in the **${release.title}** release is active but not assigned to anyone anymore.
-
       Please assign the task to a user or a team.
     roles:
     - Watcher
@@ -168,9 +158,7 @@ spec:
     subject: "[Release] ${release.title}"
     body: |-
       The **${release.title}** release is failing due to a task failure.
-
       Other tasks may still be in progress, but the release will stop after they complete.
-
       You can retry the failed task, reassign it to somebody else or abort the release.
     roles:
     - Release Admin
@@ -179,7 +167,6 @@ spec:
     subject: "[Release] ${release.title}"
     body: |-
       The status of the **${release.title}** release was changed to **${release.flagStatus}** with the following comment:
-
       **${release.flagComment}**
     roles:
     - Release Admin
@@ -188,7 +175,6 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       The **${task.title}** task in the **${release.title}** release has started, but it is not assigned.
-
       Please assign the task to a user or a team.
     roles:
     - Watcher
@@ -204,7 +190,6 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: |-
       The **${task.title}** task in the **${release.title}** release needs your input.
-
       Please enter the required information so the release can continue.
     roles:
     - Watcher
@@ -215,7 +200,6 @@ spec:
     subject: "[Release] Report '${report.reportName}' is ready"
     body: |-
       **Your audit report is complete!**
-
        '${report.reportName}' is ready for download.
   - notification: RELEASE_STARTED
     priority: Normal
@@ -224,7 +208,6 @@ spec:
     bulkSubject: "[Release] Multiple releases started"
     bulkBody: |-
       The following releases have been started:
-
       ${#releases}
       * [${title}](${url})
       ${/releases}
@@ -237,7 +220,6 @@ spec:
     bulkSubject: "[Release] Multiple releases aborted"
     bulkBody: |-
       The following releases have been aborted:
-
       ${#releases}
       * [${title}](${url})
       ${/releases}
