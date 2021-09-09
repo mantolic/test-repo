@@ -8,11 +8,6 @@ kind: Templates
 metadata:
   home: as-code
 spec:
-- name: test as-code git repo
-  type: git.Repository
-  url: https://github.com/mantolic/test-repo
-  username: mantolic
-  password: !value "git_Repository_test_as_code_git_repo_password"
 - pattern: pattern
   stages:
   - stage: New Stage (1)
