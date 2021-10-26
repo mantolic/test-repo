@@ -1,6 +1,6 @@
 # Exported from:        http://MacBook-Pro.local:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Tue Oct 26 12:57:31 CEST 2021
+# Date created:         Tue Oct 26 12:59:40 CEST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -12,4 +12,15 @@ spec:
   scheduledStartDate: 2021-10-26T09:00:00+02:00
   phases:
   - phase: New Phase
+    tasks:
+    - name: t
+      type: xlrelease.Task
+      description: |-
+        ${global.test}
+
+        ${folder.pass}
+
+        ${folder.pass3}
+
+        ${folder.pass2}
   riskProfile: Default risk profile
