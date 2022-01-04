@@ -1,122 +1,15 @@
 # Exported from:        http://MacBook-Pro.local:5516/
-# Release version:      10.2.0-20210603-123974
-# Date created:         Tue Nov 02 11:03:29 CET 2021
+# Release version:      22.0.0-20211220-123974
+# Date created:         Tue Jan 04 14:14:09 CET 2022
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: as-code
+  home: 10a folder
 spec:
-- pattern: pattern
-  stages:
-  - stage: New Stage (1)
-    transition:
-      name: New Transition
-      type: delivery.Transition
-      conditions:
-      - type: delivery.ConditionGroup
-        operator: OR
-        conditions:
-        - type: delivery.ConditionGroup
-          operator: AND
-          conditions:
-          - type: delivery.ItemsCompletionCondition
-  - stage: New Stage (2)
-  - stage: New Stage
-- template: new templ
-  scheduledStartDate: 2021-09-09T09:00:00+02:00
-  dueDate: 2021-09-09T10:00:00+02:00
-  phases:
-  - phase: New Phase
-    tasks:
-    - name: m
-      type: xlrelease.Task
-    - name: test
-      type: xlrelease.ScriptTask
-      script: |-
-        from com.xebialabs.xlrelease.domain.folder import Folder
-
-        for x in range(6, 50):
-            for y in range(ord('a'), ord('z')+1):
-                folder = Folder()
-                folder.setTitle(str(x) + chr(y) + " folder")
-                folderApi.addFolder('Applications', folder)
-  riskProfile: Default risk profile
-- template: new templ - imported
-  scheduledStartDate: 2021-09-09T09:00:00+02:00
-  dueDate: 2021-09-09T10:00:00+02:00
-  phases:
-  - phase: New Phase
-    tasks:
-    - name: m
-      type: xlrelease.Task
-    - name: test
-      type: xlrelease.ScriptTask
-      script: |-
-        from com.xebialabs.xlrelease.domain.folder import Folder
-
-        for x in range(6, 50):
-            for y in range(ord('a'), ord('z')+1):
-                folder = Folder()
-                folder.setTitle(str(x) + chr(y) + " folder")
-                folderApi.addFolder('Applications', folder)
-  riskProfile: Default risk profile
 - template: test
-  scheduledStartDate: 2021-09-08T09:00:00+02:00
-  dueDate: 2021-09-08T10:00:00+02:00
+  scheduledStartDate: 2022-01-04T09:00:00+01:00
   phases:
   - phase: New Phase
-    tasks:
-    - name: t
-      type: delivery.CreateDelivery
-    - name: t2
-      type: delivery.FindDelivery
-    - name: t3
-      type: delivery.FindOrCreateDelivery
-      fallback: true
-    - name: t4
-      type: delivery.MarkTrackedItems
-    - name: t5
-      type: delivery.RegisterTrackedItems
-    - name: t6
-      type: delivery.WaitForStage
-    - name: t7
-      type: delivery.WaitForTrackedItems
-  riskProfile: Default risk profile
-- template: test - imported
-  scheduledStartDate: 2021-09-08T09:00:00+02:00
-  dueDate: 2021-09-08T10:00:00+02:00
-  phases:
-  - phase: New Phase
-    tasks:
-    - name: t
-      type: delivery.CreateDelivery
-    - name: t2
-      type: delivery.FindDelivery
-    - name: t3
-      type: delivery.FindOrCreateDelivery
-      fallback: true
-    - name: t4
-      type: delivery.MarkTrackedItems
-    - name: t5
-      type: delivery.RegisterTrackedItems
-    - name: t6
-      type: delivery.WaitForStage
-    - name: t7
-      type: delivery.WaitForTrackedItems
-  riskProfile: Default risk profile
-- template: test remote plugin
-  scheduledStartDate: 2021-10-06T09:00:00+02:00
-  phases:
-  - phase: New Phase
-    tasks:
-    - name: test
-      type: xlrelease.RemoteCompletionTask
-      owner: admin
-    - name: ggg
-      type: xlrelease.RemoteCompletionTask
-      owner: admin
-    - name: t
-      type: xlrelease.Task
   riskProfile: Default risk profile
